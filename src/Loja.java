@@ -16,7 +16,7 @@ public class Loja {
 	
 	public boolean RemoveProduto(String nomeProduto) {
 		for(Produto p : this.produtos) {
-			if (p.getName().equals(nomeProduto)) {
+			if (p.getName().trim().equalsIgnoreCase(nomeProduto)) {
 				this.produtos.remove(p);
 				return true;
 			}
@@ -41,19 +41,26 @@ public class Loja {
 	}
 	
 	public boolean Busca (String nomeProduto) {
-		for(Produto p : this.produtos) {
-			if (p.getName().equals(nomeProduto)) {
-				return true;
+		//for(Produto p : this.produtos) {
+		//	if (p.getName().equals(nomeProduto)) {
+		//		return true;
+		//	}
+		//}
+		//throw new IllegalArgumentException();
+		boolean retorno = false;				
+		for(Produto p : this.produtos) {			
+			if (p.getName().trim().equalsIgnoreCase(nomeProduto)) {
+				retorno = true;
 			}
-		}
-		throw new IllegalArgumentException();
+		}		
+		return retorno;
 	}	
 	
-	//////Implementamos a função de atualizarProduto
+	//////Implementamos a funï¿½ï¿½o de atualizarProduto
 	//////Recebe o nome do produto para ser alterado e pede os novos parametros para que seja alterado
 	public boolean atualizarProduto(String nomeProduto, String novo_nome, int nova_quantidade, float novo_preco) {
 		for(Produto p : this.produtos) {
-			if (p.getName().equals(nomeProduto)) {
+			if (p.getName().trim().equalsIgnoreCase(nomeProduto)) {
 				p.setName(novo_nome);
 				p.setQuant(nova_quantidade);
 				p.setPreco(novo_preco);

@@ -1,0 +1,39 @@
+Requisitos de melhoria:
+   
+   1. Ao escolher aopção do menu o cursor fica na frente da frase, deve ser no final
+   2. Quando o erro ocorrer voltar para o Menu principal	
+   
+   Em formato BDD:
+   
+   1. Funcionalidade Escolher Opção de Menu correto
+      Dado que estou no sistema e aciono a execução E como usuario do sistema
+      Quando escolhida a opção de menu então
+      Sistema apresenta a frase com o comando do menu e em seguida o cursor              
+   
+Casos de teste (Requisitos de bug):
+   
+   Cadastro de produto 
+   1. Nome não aceita espaço no nome do produto
+   2. Preço não aceita separador de casas decimais por ponto
+   3. O nome aceita números
+   4. No campo quantidade ao informar uma letra ao invés de número ocorre erro
+   5. No campo preço unitário ao adicionar letra ocorre erro      
+   
+   Listar produto OK
+   
+   Excluir Produto
+   1. Ao informar o nome do produto inexistente ocorre erro
+   2. Se colocar o nome do produto existente com espaço ocorre erro
+   3. Se colocar o nome do produto existente com letra minúscula ocorre erro
+   4. Ao tentar excluir um produto inexistente deve informar que não há produto cadastrado
+   5. Quando informar "S" ao invés de "s" ocorre erro na exclusão
+   
+   Buscar Produto
+   1. Não encontra produto com distinção de letras
+   2. Não encontra produto pois há espaço em branco no input
+   
+   Atualizar produto
+   1. Não atualiza produto
+   2. Não localiza produto por distinção de letra
+   
+   

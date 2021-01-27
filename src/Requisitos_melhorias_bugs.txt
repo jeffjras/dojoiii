@@ -1,3 +1,0 @@
-Requisitos de Melhorias 
-	1. Ao escolher a opção de menu e quando ocorre o erro tratar e fornecer uma mensagem adequada do erro
-	2. permanecer com as opções do menu 
