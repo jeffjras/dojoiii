@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -21,12 +22,28 @@ public class Main {
 				String nome;
 				int quantidade;
 				float preco;
+				in.nextLine();
 				System.out.println("Nome do Produto a ser Adicionado: ");
 				nome = in.next();
 				System.out.println("Quantidade do produto:");
 				quantidade = in.nextInt();
 				System.out.println("Preco unitario: ");
 				preco = in.nextFloat();
+				String[] separa=in.nextLine() .replaceAll("[ ]+", " ") .split(" ");
+				String frase2 ="";
+				String dados= "";
+				for (String frase:separa) {
+					frase2=frase.replaceAll(" ", "");
+					if(!frase2.isEmpty()) {
+						dados=dados+" "+frase2;
+					}
+				}
+				try {
+					nome=dados;
+				} catch (InputMismatchException e) {
+					System.err.println("Nome Invalido");
+					break;
+				}
 				Produto p = new Produto(nome, quantidade, preco);
 				loja.addProduto(p);
 				System.out.println("Produto Adicionado");
